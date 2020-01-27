@@ -5,6 +5,11 @@ redisClient.on('ready', function() {
     console.log("Redis is ready");
 });
 
+redisClient.auth('password', function(err, reply) {
+    console.log(reply);
+});
+redisClient.set("language", "nodejs");
+
 redisClient.on('error', function() {
     console.log("Error in Redis");
 });
